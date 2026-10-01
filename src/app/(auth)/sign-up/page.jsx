@@ -85,7 +85,7 @@ const SingUpPage = () => {
           <FieldError />
         </TextField>
         <div className="flex gap-2">
-          <Button type="submit">
+          <Button type="submit" callbackURL="/">
             {/* <Check /> */}
             Submit
           </Button>
