@@ -1,5 +1,5 @@
 "use client";
-import { signUp } from "@/lib/auth-client";
+import { signIn, signUp } from "@/lib/auth-client";
 import {
   Button,
   Description,
@@ -21,9 +21,16 @@ const SingUpPage = () => {
       name: data.name,
       email: data.email,
       password: data.password,
-      callbackURL: "/"
+      callbackURL: "/",
     });
     console.log(resData, error);
+  };
+
+  const handelGoogleSignIn = async () => {
+    const resData = await signIn.social({
+      provider: "google",
+    });
+    console.log("handal Google Sign up button: ", resData);
   };
 
   return (
@@ -94,6 +101,11 @@ const SingUpPage = () => {
           </Button>
         </div>
       </Form>
+
+      <p>or</p>
+      <div>
+        <Button onClick={handelGoogleSignIn}>Sign Up with Google</Button>
+      </div>
     </div>
   );
 };
