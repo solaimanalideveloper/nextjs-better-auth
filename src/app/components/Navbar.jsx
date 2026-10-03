@@ -25,12 +25,17 @@ export default function App() {
           <Link href="/services">Services</Link>
         </li>
         <li>
-          <Link href="dashboard">Dashboard</Link>
+          <Link href="/dashboard">Dashboard</Link>
         </li>
         {session?.user && (
-          <li>
-            <Link href="profile">Profile</Link>
-          </li>
+          <>
+            <li>
+              <Link href="/profile">Profile</Link>
+            </li>
+            <li>
+              <Link href="/settings">Settings</Link>
+            </li>
+          </>
         )}
       </ul>
     </>
@@ -90,7 +95,9 @@ export default function App() {
           </button>
           <div className="flex items-center gap-3">
             {/* <Logo /> */}
-            <p className="font-bold">ACME</p>
+            <Link href="/" className="font-bold">
+              ACME
+            </Link>
           </div>
         </div>
 
